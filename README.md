@@ -71,7 +71,6 @@ Pra não confundir, já que estão todos na mesma conta do GitHub:
 |---|---|---|
 | **funil-simples** | este repositório: ferramentas abertas, MIT, sem link de afiliado | público |
 | **funilsimples.com** | o site com os artigos. Tem link de afiliado, e avisa | público |
-| **rede-afiliados-rec** | o código que roda o site e a medição | **privado** |
 | **ORSTAC** | **outro projeto, outro assunto**: robôs de trade. Não tem relação nenhuma com funil de vendas | público |
 
 ## Licença
