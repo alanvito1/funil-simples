@@ -1,0 +1,15 @@
+{
+  "name": "funil-simples",
+  "version": "0.1.0",
+  "description": "Modelos e ferramentas para pagina de captura e e-mail automatico, em portugues. Sem dependencia.",
+  "type": "module",
+  "bin": { "funil-simples": "cli/index.mjs" },
+  "files": ["cli", "modelos", "checklists", "guias", "README.md"],
+  "scripts": { "test": "node --test cli/*.test.mjs" },
+  "keywords": ["landing-page", "pagina-de-captura", "funil-de-vendas", "email-marketing", "lgpd", "seo"],
+  "license": "MIT",
+  "author": "Alan Victor (https://github.com/alanvito1)",
+  "homepage": "https://funilsimples.com",
+  "repository": { "type": "git", "url": "git+https://github.com/alanvito1/funil-simples.git" },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Pronto — confira seu e-mail</title>
+<meta name="description" content="Cadastro confirmado.">
+
+<!-- Fora do índice de busca, de propósito: esta página só faz sentido depois
+     do formulário, e uma pessoa que chega aqui pela busca chega num lugar que
+     não explica nada. -->
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%231559c4'/><path d='M5 7h14l-5.5 6.2V18l-3 1.5v-6.3L5 7z' fill='white'/></svg>">
+
+<style>
+:root {
+  color-scheme: light dark;
+  --fg:#16202b; --bg:#fff; --dim:#5b6977; --line:#e3e8ee;
+  --card:#f7f9fb; --cor:#1559c4;   /* TROQUE --cor */
+}
+@media (prefers-color-scheme: dark) {
+  :root { --fg:#e7edf4; --bg:#0e141b; --dim:#9aa7b4; --line:#243040; --card:#151d26; --cor:#5c9bf8; }
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--bg); color:var(--fg);
+  font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  display:grid; place-items:center; min-height:100vh; padding:24px 20px;
+}
+main { max-width:520px; width:100%; }
+h1 { font-size:clamp(26px,5vw,32px); line-height:1.2; letter-spacing:-.02em; margin:0 0 14px; }
+.lead { font-size:19px; color:var(--dim); margin:0 0 24px; }
+ol { padding-left:22px; background:var(--card); border:1px solid var(--line);
+     border-radius:12px; padding:20px 20px 20px 42px; margin:0 0 24px; }
+li { margin-bottom:10px; }
+li:last-child { margin-bottom:0; }
+.nota { font-size:14px; color:var(--dim); }
+a { color:var(--cor); }
+:focus-visible { outline:2px solid var(--cor); outline-offset:2px; }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- A página de obrigado é a mais esquecida do funil, e é onde a pessoa
+       ainda está prestando atenção. Diga exatamente o que vai acontecer: o que
+       chega, quando, e o que fazer se não chegar. -->
+  <h1>Pronto. Agora confira seu e-mail.</h1>
+  <p class="lead">O checklist já saiu. Deve chegar em menos de um minuto.</p>
+
+  <ol>
+    <li>Procure por <strong>“Seu checklist”</strong> na caixa de entrada.</li>
+    <li>Se não achar, olhe em <strong>Promoções</strong> ou <strong>Spam</strong>
+    — é onde o primeiro e-mail costuma cair.</li>
+    <li>Se estiver no spam, marque como “não é spam”. Assim os próximos chegam
+    no lugar certo.</li>
+  </ol>
+
+  <p class="nota">Não chegou em cinco minutos? Escreva para
+  <a href="mailto:TROQUE@seudominio.com.br">TROQUE@seudominio.com.br</a> que eu
+  mando na mão.</p>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- TROQUE: aparece na aba e no resultado de busca. Até 60 caracteres. -->
+<title>Receba o checklist de 7 passos — Nome do seu projeto</title>
+
+<!-- TROQUE: o texto que aparece embaixo do título na busca. Até 155 caracteres. -->
+<meta name="description" content="Um checklist de uma página com os 7 passos que eu sigo antes de publicar. Mando por e-mail, de graça.">
+
+<!-- TROQUE o domínio. É a URL oficial desta página; sem ela, o buscador pode
+     indexar uma versão com parâmetro de anúncio e tratar as duas como páginas
+     diferentes. -->
+<link rel="canonical" href="https://seudominio.com.br/">
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#1559c4">
+
+<!-- Como a página aparece quando alguém compartilha no WhatsApp ou no LinkedIn. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Receba o checklist de 7 passos">
+<meta property="og:description" content="Um checklist de uma página com os 7 passos que eu sigo antes de publicar.">
+<meta property="og:url" content="https://seudominio.com.br/">
+
+<!-- Favicon embutido: sem arquivo extra e sem requisição. Troque a cor. -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%231559c4'/><path d='M5 7h14l-5.5 6.2V18l-3 1.5v-6.3L5 7z' fill='white'/></svg>">
+
+<style>
+/* Tudo embutido de propósito: uma requisição, nada de terceiro, nada para
+   carregar. Isso é o que faz abrir rápido em 3G, e é também o motivo de esta
+   página não precisar de aviso de cookie. */
+:root {
+  color-scheme: light dark;
+  --fg:#16202b; --bg:#fff; --dim:#5b6977; --line:#e3e8ee;
+  --card:#f7f9fb; --cor:#1559c4; --cor-fg:#fff;   /* TROQUE --cor */
+}
+@media (prefers-color-scheme: dark) {
+  :root { --fg:#e7edf4; --bg:#0e141b; --dim:#9aa7b4; --line:#243040;
+          --card:#151d26; --cor:#5c9bf8; --cor-fg:#0b1018; }
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--bg); color:var(--fg);
+  font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  display:grid; place-items:center; min-height:100vh; padding:24px 20px;
+}
+main { max-width:560px; width:100%; }
+h1 { font-size:clamp(28px,6vw,36px); line-height:1.15; letter-spacing:-.02em; margin:0 0 14px; }
+.lead { font-size:19px; color:var(--dim); margin:0 0 28px; }
+ul { padding-left:20px; margin:0 0 28px; }
+li { margin-bottom:8px; }
+form { display:grid; gap:12px; background:var(--card); border:1px solid var(--line);
+       border-radius:12px; padding:20px; }
+label { font-weight:600; font-size:15px; }
+input[type=email] {
+  width:100%; padding:14px; font-size:16px; border-radius:10px;
+  border:1px solid var(--line); background:var(--bg); color:var(--fg);
+}
+button {
+  padding:14px 22px; font-size:16px; font-weight:650; border:0; border-radius:10px;
+  background:var(--cor); color:var(--cor-fg); cursor:pointer;
+}
+button:hover { filter:brightness(1.08); }
+:focus-visible { outline:2px solid var(--cor); outline-offset:2px; }
+.aceite { display:flex; gap:10px; align-items:flex-start; font-size:14px;
+          color:var(--dim); font-weight:400; }
+.aceite input { margin-top:4px; }
+footer { margin-top:28px; font-size:14px; color:var(--dim); }
+a { color:var(--cor); }
+@media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- TROQUE tudo abaixo. Regra: UMA promessa, nada de menu, nada de link que
+       leve a pessoa embora antes de preencher. -->
+  <h1>Os 7 passos que eu sigo antes de publicar</h1>
+  <p class="lead">Um checklist de uma página. Sem curso, sem webinário, sem
+  grupo de WhatsApp.</p>
+
+  <ul>
+    <li>O que conferir antes de pagar por anúncio</li>
+    <li>O erro que faz a página não converter</li>
+    <li>O que medir na primeira semana</li>
+  </ul>
+
+  <!-- TROQUE o action pela URL do formulário da sua ferramenta de e-mail.
+       O name do campo também muda conforme a ferramenta: veja a documentação
+       dela. Método POST, sempre. -->
+  <form method="post" action="COLE-AQUI-A-URL-DO-SEU-FORMULARIO">
+    <label for="email">Seu melhor e-mail</label>
+    <input type="email" id="email" name="email" required
+           autocomplete="email" placeholder="voce@exemplo.com">
+
+    <!-- O aceite não é enfeite: é a base legal para você mandar e-mail.
+         Deixe visível, marcável pela pessoa, e nunca pré-marcado. -->
+    <label class="aceite">
+      <input type="checkbox" name="aceite" value="1" required>
+      <span>Concordo em receber e-mails e sei que posso sair quando quiser, em
+      um clique. <a href="/privacidade.html">Como uso seus dados</a>.</span>
+    </label>
+
+    <button type="submit">Quero o checklist</button>
+  </form>
+
+  <footer>
+    <p>Sem spam. Um clique para sair, em todo e-mail.</p>
+  </footer>
+
+</main>
+</body>
+</html>
