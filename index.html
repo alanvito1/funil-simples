@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funil Simples — o que dá para montar sem pagar ferramenta</title>
+<meta name="description" content="Seis níveis do que dá para montar sem pagar ferramenta: captura, e-mail automático, checkout, curso, entregabilidade e afiliados próprios.">
+<link rel="canonical" href="https://alanvito1.github.io/funil-simples/">
+<meta name="author" content="Alan Victor">
+<meta name="robots" content="index,follow,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Funil Simples">
+<meta property="og:title" content="O que dá para montar sem pagar ferramenta">
+<meta property="og:description" content="Seis níveis, do primeiro e-mail capturado ao programa de afiliados próprio. Com o que cada um exige e onde está a documentação.">
+<meta property="og:url" content="https://alanvito1.github.io/funil-simples/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1559c4">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%231559c4'/><path d='M5 7h14l-5.5 6.2V18l-3 1.5v-6.3L5 7z' fill='white'/></svg>">
+<!-- Descreve so o que esta visivel na pagina: a autoria e os seis niveis que o
+     leitor ve na lista. Nenhum HowTo e nenhum FAQPage, porque nao ha passo a
+     passo nem perguntas aqui - marcacao que descreve o que nao existe e o
+     jeito mais rapido de perder a confianca do buscador. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://alanvito1.github.io/funil-simples/",
+      "url": "https://alanvito1.github.io/funil-simples/",
+      "name": "O que dá para montar sem pagar ferramenta",
+      "description": "Seis níveis do que dá para montar sem pagar ferramenta: captura, e-mail automático, checkout, curso, entregabilidade e afiliados próprios.",
+      "inLanguage": "pt-BR",
+      "author": { "@id": "https://github.com/alanvito1" },
+      "isPartOf": { "@type": "WebSite", "name": "Funil Simples", "url": "https://funilsimples.com" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://github.com/alanvito1",
+      "name": "Alan Victor",
+      "url": "https://funilsimples.com/sobre",
+      "sameAs": ["https://github.com/alanvito1"]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Os seis níveis",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 6,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Capturar o primeiro e-mail" },
+        { "@type": "ListItem", "position": 2, "name": "Mandar o e-mail automático" },
+        { "@type": "ListItem", "position": 3, "name": "Receber o primeiro pagamento" },
+        { "@type": "ListItem", "position": 4, "name": "Entregar um curso, não um PDF" },
+        { "@type": "ListItem", "position": 5, "name": "Fazer o e-mail chegar na caixa de entrada" },
+        { "@type": "ListItem", "position": 6, "name": "Ter outras pessoas vendendo para você" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* Mesma linguagem visual do site: fonte do sistema, uma cor de destaque, borda
+   fina, nenhuma sombra, nenhuma animacao. Zero recurso de terceiro - nenhuma
+   fonte, nenhum script, nenhuma imagem de fora. */
+:root {
+  --bg: #fff; --fg: #15181c; --dim: #5b6472; --line: #e3e7ec;
+  --card: #f7f9fb; --accent: #1559c4; --accent-fg: #fff; --ok: #0f7a3d;
+  --e1: 8px; --e2: 16px; --e3: 24px; --e4: 40px; --e5: 64px; --r: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1215; --fg: #e8ebee; --dim: #9aa4b2; --line: #272d35;
+    --card: #161b21; --accent: #74a9f8; --accent-fg: #0f1215; --ok: #5ac98a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1215; --fg: #e8ebee; --dim: #9aa4b2; --line: #272d35;
+  --card: #161b21; --accent: #74a9f8; --accent-fg: #0f1215; --ok: #5ac98a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 var(--e2); }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible, .cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+h1, h2, h3 { line-height: 1.25; letter-spacing: -0.01em; }
+h1 { font-size: 2em; margin: 0 0 var(--e2); }
+h2 { font-size: 1.4em; margin: var(--e5) 0 var(--e2); }
+h3 { font-size: 1.07em; margin: 0 0 var(--e1); }
+p { margin: 0 0 var(--e2); }
+header.top {
+  border-bottom: 1px solid var(--line); padding: var(--e2) 0;
+  display: flex; gap: var(--e3); align-items: baseline; flex-wrap: wrap;
+}
+header.top strong { font-size: 1.05em; }
+header.top nav { display: flex; gap: var(--e2); flex-wrap: wrap; font-size: 0.93em; }
+.lead { font-size: 1.16em; color: var(--dim); }
+.cta {
+  display: inline-block; background: var(--accent); color: var(--accent-fg);
+  padding: 13px 22px; border-radius: var(--r); font-weight: 600;
+  text-decoration: none;
+}
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r); padding: var(--e3); margin: var(--e3) 0;
+}
+.note { color: var(--dim); font-size: 0.88em; margin: 0; }
+table { width: 100%; border-collapse: collapse; margin: var(--e3) 0; font-size: 0.95em; }
+th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 0.82em; text-transform: uppercase; letter-spacing: 0.04em; color: var(--dim); }
+ol.niveis { list-style: none; counter-reset: n; padding: 0; margin: var(--e3) 0 0; }
+ol.niveis > li {
+  counter-increment: n; position: relative;
+  border-left: 2px solid var(--line); padding: 0 0 var(--e4) var(--e4); margin: 0;
+}
+ol.niveis > li:last-child { border-left-color: transparent; padding-bottom: 0; }
+ol.niveis > li::before {
+  content: counter(n); position: absolute; left: -15px; top: 0;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--accent); color: var(--accent-fg);
+  font-size: 0.82em; font-weight: 700;
+  display: grid; place-items: center;
+}
+.precisa { color: var(--dim); font-size: 0.9em; margin: 0 0 var(--e1); }
+.livre { color: var(--ok); font-weight: 600; }
+footer.pe { border-top: 1px solid var(--line); margin-top: var(--e5); padding: var(--e4) 0 var(--e5); font-size: 0.93em; }
+footer.pe ul { list-style: none; padding: 0; display: flex; gap: var(--e3); flex-wrap: wrap; margin: 0 0 var(--e3); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap" style="display:flex;gap:var(--e3);align-items:baseline;flex-wrap:wrap;width:100%">
+  <strong>Funil Simples</strong>
+  <nav>
+    <a href="https://funilsimples.com">Artigos</a>
+    <a href="https://github.com/alanvito1/funil-simples/discussions">Discussões</a>
+    <a href="https://t.me/funilsimples">Telegram</a>
+    <a href="https://github.com/alanvito1/funil-simples">Código</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+
+<h1>O que dá para montar sem pagar ferramenta</h1>
+<p class="lead">Seis níveis, do primeiro e-mail capturado ao programa de
+afiliados próprio. Cada um diz o que exige e onde está a documentação oficial.
+Nenhum deles precisa de cartão para começar.</p>
+
+<h2>Por que uma ferramenta só, e não cinco</h2>
+<p>A conta que trava quem está começando não é o preço de uma assinatura: é o
+de cinco. Uma plataforma tudo-em-um substitui a pilha inteira.</p>
+
+<table>
+  <thead><tr><th>O que precisa funcionar</th><th>O que normalmente se assina separado</th></tr></thead>
+  <tbody>
+    <tr><td>Funil, página de captura e de venda</td><td>ClickFunnels, Leadpages</td></tr>
+    <tr><td>E-mail marketing, automação e SMS</td><td>MailerLite, Mailchimp</td></tr>
+    <tr><td><strong>Curso online com área de alunos</strong></td><td>Hotmart, Teachable, Kajabi</td></tr>
+    <tr><td><strong>Checkout</strong> (Stripe, PayPal, Mercado Pago)</td><td>gateway + plugin</td></tr>
+    <tr><td><strong>Programa de afiliados próprio</strong></td><td>plataforma de afiliados</td></tr>
+    <tr><td>Blog, site, comunidade, webinar, agenda</td><td>WordPress + plugins</td></tr>
+  </tbody>
+</table>
+
+<div class="card">
+  <h3>A plataforma que eu uso</h3>
+  <p>É a <strong>Systeme.io</strong>. O plano gratuito dela tem
+  <strong>2.000 contatos e e-mails ilimitados</strong> — número lido na página
+  oficial de recursos em <time datetime="2026-10-28">28 de outubro de 2026</time>.</p>
+  <p><a class="cta" href="https://funilsimples.com/go/systeme?s=github-pages&amp;p=%2Fescala" rel="nofollow sponsored">Criar a conta gratuita</a></p>
+  <p class="note"><strong>Link de afiliado.</strong> Eu recebo comissão se você
+  assinar um plano pago depois. Você paga o mesmo preço, e o plano gratuito
+  continua gratuito.</p>
+</div>
+
+<p><strong>O que eu não vou afirmar:</strong> a página de recursos diz "primeiro
+funil sem custo" e fontes de terceiros dizem "3 funis". Não confirmei qual está
+certo, então o número não aparece aqui. A tabela de preços deles não é legível
+fora do navegador, e os outros limites do plano gratuito eu ainda não verifiquei.
+O comparativo com o que ela <em>não</em> faz está em
+<a href="https://funilsimples.com/ferramenta-gratuita">ferramenta gratuita</a>.</p>
+
+<h2>Os seis níveis</h2>
+
+<ol class="niveis">
+
+<li>
+  <h3>Capturar o primeiro e-mail</h3>
+  <p class="precisa">Uma página com uma promessa, um campo e um botão — e o
+  e-mail indo para algum lugar que é seu.</p>
+  <p>É o nível em que quase todo mundo empaca, e o erro quase sempre é montar a
+  página antes de ter onde guardar o contato. <span class="livre">Grátis.</span></p>
+  <p><a href="https://funilsimples.com/">Como montar</a> ·
+  <a href="modelos/captura-simples/">modelo pronto</a> ·
+  <a href="https://help.systeme.io/category/146-sales-funnel">docs: funis</a></p>
+</li>
+
+<li>
+  <h3>Mandar o e-mail automático</h3>
+  <p class="precisa">Uma sequência que dispara sozinha quando a pessoa se
+  cadastra.</p>
+  <p>Separar isso em duas tarefas — guardar o contato, e depois disparar — é o
+  que destrava a maioria dos casos. <span class="livre">Grátis.</span></p>
+  <p><a href="https://funilsimples.com/email-automatico">Como fazer</a> ·
+  <a href="https://help.systeme.io/category/156-emails">docs: e-mails</a></p>
+</li>
+
+<li>
+  <h3>Receber o primeiro pagamento</h3>
+  <p class="precisa">Uma página de venda e um checkout ligado a Stripe, PayPal
+  ou Mercado Pago.</p>
+  <p>A plataforma não cobra taxa própria por cima do gateway — só o gateway
+  cobra a dele.</p>
+  <p><a href="https://help.systeme.io/category/538-payments">docs: pagamentos</a></p>
+</li>
+
+<li>
+  <h3>Entregar um curso, não um PDF</h3>
+  <p class="precisa">Área de alunos com videoaula, liberação gradual e
+  acompanhamento de progresso.</p>
+  <p>É aqui que o produto deixa de ser um arquivo e passa a ser algo que a
+  pessoa acessa — e que dá para cobrar de novo.</p>
+  <p><a href="https://help.systeme.io/category/163-courses-member-sites">docs: cursos e área de membros</a></p>
+</li>
+
+<li>
+  <h3>Fazer o e-mail chegar na caixa de entrada</h3>
+  <p class="precisa">Domínio próprio autenticado.</p>
+  <p>O nível que ninguém conta: a central de ajuda deles tem
+  <strong>45 artigos só sobre entregabilidade</strong>, mais que sobre funis.
+  É o problema real de quem já tem lista — e-mail que sai e não chega.</p>
+  <p><a href="https://help.systeme.io/category/3251-deliverability">docs: entregabilidade</a></p>
+</li>
+
+<li>
+  <h3>Ter outras pessoas vendendo para você</h3>
+  <p class="precisa">Um programa de afiliados seu, com comissão e pagamento.</p>
+  <p>Está incluído no plano gratuito, segundo a página oficial de recursos. É o
+  nível que muda a escala, porque deixa de depender do seu tráfego.</p>
+  <p><a href="https://help.systeme.io/category/160-affiliation">docs: afiliados</a></p>
+</li>
+
+</ol>
+
+<h2>Modelos, abrindo aqui mesmo</h2>
+<p>HTML puro. Nenhum carrega fonte, script ou imagem de fora — é o que faz a
+página abrir rápido em celular barato, e é o que dispensa aviso de cookie.</p>
+<div class="card">
+  <p><a href="modelos/captura-simples/">Página de captura</a> — promessa, um
+  campo, um botão.<br>
+  <a href="modelos/obrigado/">Página de obrigado</a> — a de depois do cadastro,
+  que quase todo mundo esquece.</p>
+  <p class="note">Abre, vê funcionando, e copia de
+  <a href="https://github.com/alanvito1/funil-simples/tree/main/modelos">modelos/</a>.
+  Para conferir a sua: <code>npx funil-simples checar minha-pagina.html</code></p>
+</div>
+
+<h2>Onde continua</h2>
+<table>
+  <tbody>
+    <tr><td><strong>Artigos, com fonte e data</strong></td><td><a href="https://funilsimples.com">funilsimples.com</a></td></tr>
+    <tr><td><strong>Dúvida, ideia ou o que deu errado</strong></td><td><a href="https://github.com/alanvito1/funil-simples/discussions">Discussões</a></td></tr>
+    <tr><td><strong>Aviso de artigo novo</strong></td><td><a href="https://t.me/funilsimples">t.me/funilsimples</a></td></tr>
+    <tr><td><strong>Modelos e o conferidor</strong></td><td><a href="https://github.com/alanvito1/funil-simples">github.com/alanvito1/funil-simples</a></td></tr>
+  </tbody>
+</table>
+
+</main>
+
+<footer class="pe"><div class="wrap">
+  <ul>
+    <li><a href="https://funilsimples.com">Artigos</a></li>
+    <li><a href="https://funilsimples.com/sobre">Sobre</a></li>
+    <li><a href="https://funilsimples.com/privacidade">Privacidade</a></li>
+    <li><a href="https://github.com/alanvito1/funil-simples/discussions">Discussões</a></li>
+    <li><a href="https://t.me/funilsimples">Telegram</a></li>
+    <li><a href="https://github.com/alanvito1">GitHub</a></li>
+  </ul>
+
+  <div class="card">
+    <h3>Você também pode ser afiliado</h3>
+    <p>O cadastro de afiliado da Systeme.io é gratuito e não exige assinar
+    plano. A comissão é <strong>60% vitalícia</strong>, segundo a página oficial
+    do programa, lida em <time datetime="2026-10-28">28 de outubro de 2026</time>.</p>
+    <p><a href="https://funilsimples.com/go/systeme-afiliado?s=github-pages&amp;p=%2Fescala" rel="nofollow sponsored">Cadastro de afiliado</a></p>
+    <p class="note">Esse também é link de afiliado meu. <strong>Dito com
+    clareza:</strong> a página oficial do programa não menciona comissão de
+    segundo nível, então eu <em>não</em> ganho por você virar afiliado — só se
+    você assinar um plano pago. Auto-indicação é proibida por eles: não dá para
+    usar o próprio link para comprar.</p>
+  </div>
+
+  <p class="note">Escrito por <a href="https://github.com/alanvito1">Alan
+  Victor</a>. Código sob licença MIT. Os links de afiliado desta página estão
+  marcados como tal em cada lugar em que aparecem.</p>
+</div></footer>
+
+</body>
+</html>
