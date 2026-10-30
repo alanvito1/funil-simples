@@ -1,4 +1,12 @@
 /**
+ * GERADO AUTOMATICAMENTE - nao edite este arquivo a mao.
+ *
+ * Ele e a copia publicada de uma implementacao unica: o mesmo codigo roda na
+ * ferramenta do site e aqui no terminal. Editar so um lado faz os dois
+ * discordarem, e a ferramenta existe justamente para nao discordar.
+ */
+
+/**
  * Confere uma página antes de ela ir para o ar.
  *
  * Tudo aqui é leitura de texto: nenhuma dependência, nenhuma rede, nenhum
@@ -9,25 +17,58 @@
  * alguma coisa concreta, e o motivo vai escrito junto do resultado.
  */
 
+
+/**
+ * @typedef {"ok" | "aviso" | "erro"} Nivel
+ *
+ * @typedef {object} Achado
+ * @property {Nivel} nivel
+ * @property {string} o_que   o que a pagina tem, ou nao tem
+ * @property {string} [porque] por que isso importa. So quando importa.
+ */
+
 const OK = "ok";
 const AVISO = "aviso";
 const ERRO = "erro";
 
-/** Procura a primeira ocorrência de uma tag e devolve o atributo pedido. */
+/**
+ * Procura a primeira ocorrência de uma tag e devolve o atributo pedido.
+ *
+ * @param {string} html
+ * @param {string} seletor
+ * @param {string} atrib
+ * @returns {string | null}
+ */
 function atributo(html, seletor, atrib) {
   const re = new RegExp(`<${seletor}[^>]*\\s${atrib}=["']([^"']*)["'][^>]*>`, "i");
   return re.exec(html)?.[1] ?? null;
 }
 
+/**
+ * @param {string} html
+ * @param {string} nome
+ * @param {string} [chave]
+ * @returns {string | null}
+ */
 function metaConteudo(html, nome, chave = "name") {
   const re = new RegExp(`<meta[^>]*\\s${chave}=["']${nome}["'][^>]*>`, "i");
   const tag = re.exec(html)?.[0];
   return tag ? (/\scontent=["']([^"']*)["']/i.exec(tag)?.[1] ?? null) : null;
 }
 
+/**
+ * Confere o HTML de uma página e devolve o que achou, em ordem de leitura.
+ *
+ * @param {string} html
+ * @returns {Achado[]}
+ */
 export function checar(html) {
+  /** @type {Achado[]} */
   const achados = [];
-  const diz = (nivel, o_que, porque) => achados.push({ nivel, o_que, porque });
+  /** @type {(nivel: Nivel, o_que: string, porque?: string) => void} */
+  const diz = (nivel, o_que, porque) => {
+    achados.push({ nivel, o_que, porque });
+  };
 
   // Uma página marcada como noindex não vai aparecer na busca, e por isso não
   // precisa de canonical nem de descrição: cobrar isso dela é mandar a pessoa
@@ -115,7 +156,7 @@ export function checar(html) {
   const externos = [];
 
   for (const m of html.matchAll(/\ssrc=["'](https?:\/\/[^"']+)["']/gi)) {
-    externos.push(m[1]);
+    if (m[1]) externos.push(m[1]);
   }
   for (const m of html.matchAll(/<link\b[^>]*>/gi)) {
     const tag = m[0];
@@ -150,7 +191,7 @@ export function checar(html) {
   } else {
     for (const m of html.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)) {
       try {
-        JSON.parse(m[1]);
+        JSON.parse(m[1] ?? "");
       } catch {
         diz(ERRO, "JSON-LD inválido", "um bloco quebrado é ignorado inteiro");
       }
@@ -160,6 +201,7 @@ export function checar(html) {
   return achados;
 }
 
+/** @param {Achado[]} achados */
 export function formatar(achados) {
   const simbolo = { ok: "  ok ", aviso: "AVISO", erro: " ERRO" };
   const linhas = achados.map(
